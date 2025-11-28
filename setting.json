@@ -1,0 +1,28 @@
+{
+  "alwaysThinkingEnabled": true,
+  "askBeforeRunningTool": false,
+  "permissions": {
+    "allow": [
+      // 읽기 전용 Bash 명령들: 자동 허용
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+
+      // 필요하면 추가 예시
+      // "Bash(pnpm run lint:*)",
+      // "Bash(pnpm run test:*)",
+
+      // 안전하다고 보는 MCP 서버만 자동 허용 (선택)
+      "mcp__serena",
+      "mcp__playwright"
+    ],
+    "deny": [
+      // 위험/쓰기 계열 Bash 명령: 항상 차단 또는 수동 승인 유도용 (선택)
+      "Bash(rm:*)",
+      "Bash(sudo:*)"
+      // 필요 시 "Read(./secrets/**)" 같이 민감 파일도 막을 수 있음
+    ]
+  }
+}
